@@ -19,7 +19,7 @@ license-file = "LICENSE"
 
 # Keywords and Categories
 keywords = ["ai", "machine-learning", "computer-vision", "deep-learning", "framework"]
-categories = ["science", "computer-vision", "ai", "machine-learning"]
+categories = ["science", "computer-vision", "algorithms", "mathematics", "visualization"]
 
 # Package Metadata
 readme = "README.md"
