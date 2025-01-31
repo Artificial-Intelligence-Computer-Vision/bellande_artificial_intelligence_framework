@@ -1,19 +1,44 @@
 [package]
-name = "bellande_artificial_intelligence_training_framework"
-version = "0.0.1"
-authors = ["Ronaldson Bellande"]
+name = "bellande_artificial_intelligence_framework"
+version = "0.1.0"
 edition = "2021"
-description = "An AI Training Framework developed by Bellande AI Research"
+authors = ["Bellande Artificial Intelligence Computer Vision Research Innovation (BAICVRI) <ronaldsonbellande@gmail.com>"]
+description = """
+A comprehensive artificial intelligence and computer vision training framework developed by Bellande AI Research. 
+Provides tools and utilities for machine learning model development, training, and deployment.
+"""
+
+# Repository Information
+repository = "https://github.com/BAICVRI/bellande_artificial_intelligence_framework"
+companypage = "https://git.bellande-technologies.com/BAICVRI/bellande_artificial_intelligence_framework"
+homepage = "https://github.com/Artificial-Intelligence-Computer-Vision/bellande_artificial_intelligence_framework"
+
+# License Information
 license = "GPL-3.0-or-later"
-repository = "https://github.com/Artificial-Intelligence-Computer-Vision/bellande_artificial_intelligence_training_framework"
+license-file = "LICENSE"
+
+# Keywords and Categories
+keywords = ["artificial-intelligence", "machine-learning", "computer-vision", "deep-learning", "framework"]
+categories = ["science", "computer-vision", "artificial-intelligence", "machine-learning-tools"]
+
+# Package Metadata
+readme = "README.md"
+include = [
+    "src/**/*",
+    "Cargo.toml",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md"
+]
 
 [lib]
-name = "bellande_artificial_intelligence_training_framework"
-path = "src/bellande_artificial_intelligence_training_framework.rs"
+name = "bellande_artificial_intelligence_framework"
+path = "src/bellande_artificial_intelligence_framework.rs"
 
 [dependencies]
 # Core dependencies
-ndarray = "0.15"
 rand = "0.8"
 rand_distr = "0.4"
 
@@ -25,11 +50,9 @@ serde_yaml = "0.9"
 # Utilities
 num_cpus = "1.13"
 rayon = "1.5"
-parking_lot = "0.12"
 
 # Visualization
 plotters = "0.3"
-imageproc = "0.23"
 
 # Optional CUDA support
 cudarc = { version = "0.9", optional = true }

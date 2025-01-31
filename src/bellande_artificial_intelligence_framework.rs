@@ -28,7 +28,7 @@ pub mod training;
 pub mod utilities;
 
 const VERSION: &str = env!("CARGO_PKG_VERSION");
-const FRAMEWORK_NAME: &str = "Bellande AI Training Framework";
+const FRAMEWORK_NAME: &str = "Bellande AI Framework";
 
 pub struct Framework {
     config: utilities::config::Configuration,

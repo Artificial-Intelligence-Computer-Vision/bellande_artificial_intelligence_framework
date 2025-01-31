@@ -15,10 +15,8 @@
 
 use std::error::Error;
 
-use bellande_artificial_intelligence_training_framework::{
-    core::tensor::Tensor,
-    layer::{activation::ReLU, conv::Conv2d, linear::Linear, pooling::MaxPool2d},
-    models::sequential::Sequential,
+use bellande_artificial_intelligence_framework::{
+    core::tensor::Tensor, layer::conv::Conv2d, models::sequential::Sequential,
 };
 
 #[test]

@@ -1,6 +1,6 @@
-# Bellande Artificial Intelligence Training Framework
+# Bellande Artificial Intelligence Framework
 
-Bellande training framework in Rust for machine learning models
+Bellande artificial intelligence framework in Rust for machine learning models
 
 # Run Bellos Scripts
     - build_bellande_framework.bellos
@@ -17,7 +17,7 @@ Bellande training framework in Rust for machine learning models
 
 ## Example Usage
 ```rust
-use bellande_artificial_intelligence_training_framework::{
+use bellande_artificial_intelligence_framework::{
     core::tensor::Tensor,
     layer::{activation::ReLU, conv::Conv2d},
     models::sequential::Sequential,
@@ -53,5 +53,82 @@ fn main() -> Result> {
 }
 ```
 
+## Website Crates
+- https://crates.io/crates/bellande_artificial_intelligence_framework
+
+### Installation
+- `cargo add bellande_mesh_sync`
+
+```
+Name: Bellande Artificial Intelligence Framework
+Summary: Bellande Operating System Comprehensive data synchronization system
+Company-Page: git.bellande-technologies.com/BAICVRI/bellande_artificial_intelligence_framework
+Home-page: github.com/Architecture-Mechanism/bellande_artificial_intelligence_framework
+Author: Ronaldson Bellande
+Author-email: ronaldsonbellande@gmail.com
+License: GNU General Public License v3.0
+```
+
+# Legal Documentation
+
 ## License
-Bellande Artificial Intelligence Training Framework is distributed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), see [LICENSE](https://github.com/Artificial-Intelligence-Computer-Vision/bellande_artificial_intelligence_training_framework/blob/main/LICENSE) and [NOTICE](https://github.com/Artificial-Intelligence-Computer-Vision/bellande_artificial_intelligence_training_framework/blob/main/LICENSE) for more information.
+Bellande Artificial Intelligence Framework is distributed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
+For detailed license information, see:
+- [GitHub LICENSE](https://github.com/BAICVRI/bellande_artificial_intelligence_framework/blob/main/LICENSE)
+- [Bellande LICENSE](https://git.bellande-technologies.com/BAICVRI/bellande_artificial_intelligence_framework/blob/main/LICENSE)
+
+For organizational licensing information, see:
+- [GitHub Organization Licensing](https://github.com/Artificial-Intelligence-Computer-Vision/LICENSING)
+- [Bellande Organization Licensing](https://git.bellande-technologies.com/BAICVRI/LICENSING)
+
+## Copyright
+Copyright (c) 2024 Bellande Artificial Intelligence Computer Vision Research Institute (BAICVRI)
+
+For copyright details, see:
+- [GitHub NOTICE](https://github.com/BAICVRI/bellande_artificial_intelligence_framework/blob/main/NOTICE)
+- [Bellande NOTICE](https://git.bellande-technologies.com/BAICVRI/bellande_artificial_intelligence_framework/blob/main/NOTICE)
+
+For organizational copyright information, see:
+- [GitHub Organization Copyright](https://github.com/Artificial-Intelligence-Computer-Vision/COPYRIGHT)
+- [Bellande Organization Copyright](https://git.bellande-technologies.com/BAICVRI/COPYRIGHT)
+
+## Code of Conduct
+We are committed to fostering an open and welcoming environment. For details, see:
+- [GitHub CODE_OF_CONDUCT](https://github.com/BAICVRI/bellande_artificial_intelligence_framework/blob/main/CODE_OF_CONDUCT.md)
+- [Bellande CODE_OF_CONDUCT](https://git.bellande-technologies.com/BAICVRI/bellande_artificial_intelligence_framework/blob/main/CODE_OF_CONDUCT.md)
+
+For organizational code of conduct, see:
+- [GitHub Organization Code of Conduct](https://github.com/Artificial-Intelligence-Computer-Vision/CODE_OF_CONDUCT)
+- [Bellande Organization Code of Conduct](https://git.bellande-technologies.com/BAICVRI/CODE_OF_CONDUCT)
+
+## Terms of Service
+By using this framework, you agree to comply with our terms of service. For complete terms, see:
+- [GitHub TERMS_OF_SERVICE](https://github.com/BAICVRI/bellande_artificial_intelligence_framework/blob/main/TERMS_OF_SERVICE.md)
+- [Bellande TERMS_OF_SERVICE](https://git.bellande-technologies.com/BAICVRI/bellande_artificial_intelligence_framework/blob/main/TERMS_OF_SERVICE.md)
+
+For organizational terms of service, see:
+- [GitHub Organization Profile](https://github.com/Artificial-Intelligence-Computer-Vision/.github)
+- [Bellande Organization Profile](https://git.bellande-technologies.com/BAICVRI/.profile)
+
+## Certification
+This software has been certified according to our quality standards. For certification details, see:
+- [GitHub CERTIFICATION](https://github.com/BAICVRI/bellande_artificial_intelligence_framework/blob/main/CERTIFICATION.md)
+- [Bellande CERTIFICATION](https://git.bellande-technologies.com/BAICVRI/bellande_artificial_intelligence_framework/blob/main/CERTIFICATION.md)
+
+For organizational certification standards, see:
+- [GitHub Organization Certification](https://github.com/Artificial-Intelligence-Computer-Vision/CERTIFICATION)
+- [Bellande Organization Certification](https://git.bellande-technologies.com/BAICVRI/CERTIFICATION)
+
+## Trademark
+For trademark information, see:
+- [GitHub Organization Trademark](https://github.com/Artificial-Intelligence-Computer-Vision/TRADEMARK)
+- [Bellande Organization Trademark](https://git.bellande-technologies.com/BAICVRI/TRADEMARK)
+
+---
+
+For more information, visit:
+- [GitHub Repository](https://github.com/BAICVRI/bellande_artificial_intelligence_framework)
+- [Bellande Repository](https://git.bellande-technologies.com/BAICVRI/bellande_artificial_intelligence_framework)
+- [GitHub Organization](https://github.com/Artificial-Intelligence-Computer-Vision)
+- [Bellande Organization](https://git.bellande-technologies.com/BAICVRI)
