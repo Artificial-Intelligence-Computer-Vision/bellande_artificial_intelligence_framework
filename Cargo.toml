@@ -18,7 +18,7 @@ license = "GPL-3.0-or-later"
 license-file = "LICENSE"
 
 # Keywords and Categories
-keywords = ["artificial-intelligence", "machine-learning", "computer-vision", "deep-learning", "framework"]
+keywords = ["ai", "machine-learning", "computer-vision", "deep-learning", "framework"]
 categories = ["science", "computer-vision", "ai", "machine-learning"]
 
 # Package Metadata
