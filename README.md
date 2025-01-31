@@ -17,26 +17,38 @@ Bellande training framework in Rust for machine learning models
 
 ## Example Usage
 ```rust
-use bellande_ai_training_framework::prelude::*;
+use bellande_artificial_intelligence_training_framework::{
+    core::tensor::Tensor,
+    layer::{activation::ReLU, conv::Conv2d},
+    models::sequential::Sequential,
+};
+use std::error::Error;
 
-fn main() -> Result<(), Box<dyn Error>> {
-    let mut framework = Framework::new()?;
-    framework.initialize()?;
-
-    // Create model
-    let model = Sequential::new()
-        .add(Conv2d::new(3, 64, 3, 1, 1))
-        .add(ReLU::new())
-        .add(Linear::new(64, 10));
-
-    // Configure training
-    let optimizer = Adam::new(model.parameters(), 0.001);
-    let loss_fn = CrossEntropyLoss::new();
-    let trainer = Trainer::new(model, optimizer, loss_fn);
-
-    // Train model
-    trainer.fit(train_loader, Some(val_loader), 100)?;
-
+// Simple single-layer model example
+fn main() -> Result> {
+    // Create a simple sequential model
+    let mut model = Sequential::new();
+    
+    // Add a convolutional layer
+    model.add(Box::new(Conv2d::new(
+        3,            // input channels
+        4,            // output channels
+        (3, 3),       // kernel size
+        Some((1, 1)), // stride
+        Some((1, 1)), // padding
+        true,         // use bias
+    )));
+    
+    // Create input tensor
+    let input = Tensor::zeros(&[1, 3, 8, 8]); // batch_size=1, channels=3, height=8, width=8
+    
+    // Forward pass
+    let output = model.forward(&input)?;
+    
+    // Print output shape
+    println!("Output shape: {:?}", output.shape());
+    assert_eq!(output.shape()[1], 4); // Verify output channels
+    
     Ok(())
 }
 ```
