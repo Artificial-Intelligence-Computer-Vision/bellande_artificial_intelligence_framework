@@ -57,7 +57,7 @@ fn main() -> Result> {
 - https://crates.io/crates/bellande_artificial_intelligence_framework
 
 ### Installation
-- `cargo add bellande_mesh_sync`
+- `cargo add bellande_artificial_intelligence_framework`
 
 ```
 Name: Bellande Artificial Intelligence Framework
