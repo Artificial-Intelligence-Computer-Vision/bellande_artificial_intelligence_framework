@@ -2,9 +2,9 @@
 name = "bellande_artificial_intelligence_framework"
 version = "0.1.0"
 edition = "2021"
-authors = ["Bellande Artificial Intelligence Computer Vision Research Innovation (BAICVRI) <ronaldsonbellande@gmail.com>"]
+authors = ["Bellande Artificial Intelligence Computer Vision Research Innovation Center (BAICVRI) <ronaldsonbellande@gmail.com>", "Ronaldson Bellande"]
 description = """
-A comprehensive artificial intelligence and computer vision training framework developed by Bellande AI Research. 
+A comprehensive artificial intelligence and computer vision training framework developed by Bellande Artificial Intelligence Computer Vision Research Innovation Center. 
 Provides tools and utilities for machine learning model development, training, and deployment.
 """
 
