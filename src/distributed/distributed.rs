@@ -13,21 +13,25 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-use std::sync::Arc;
-use tokio::sync::Mutex;
-use tokio::task;
+use crate::core::{error::BellandeError, tensor::Tensor};
+use crate::loss::Loss;
+use crate::models::models::Model;
+use crate::optim::Optimizer;
+use std::sync::{Arc, Mutex};
 
 pub struct DistributedTrainer {
     world_size: usize,
     rank: usize,
     model: Arc<Mutex<Box<dyn Model>>>,
     optimizer: Arc<Mutex<Box<dyn Optimizer>>>,
+    loss_fn: Box<dyn Loss>,
 }
 
 impl DistributedTrainer {
     pub fn new(
         model: Box<dyn Model>,
         optimizer: Box<dyn Optimizer>,
+        loss_fn: Box<dyn Loss>,
         world_size: usize,
         rank: usize,
     ) -> Self {
@@ -36,48 +40,50 @@ impl DistributedTrainer {
             rank,
             model: Arc::new(Mutex::new(model)),
             optimizer: Arc::new(Mutex::new(optimizer)),
+            loss_fn,
         }
     }
 
     pub async fn average_gradients(&self) {
-        let model = self.model.lock().await;
-        for param in model.parameters() {
+        let model = self.model.lock().expect("Failed to lock model mutex");
+        let mut optimizer = self
+            .optimizer
+            .lock()
+            .expect("Failed to lock optimizer mutex");
+
+        for param in optimizer.parameters_mut() {
             if let Some(grad) = &param.grad {
-                // Simulate gradient averaging across processes
-                let averaged_grad: Vec<f32> = grad.iter()
-                    .map(|&g| g / self.world_size as f32)
-                    .collect();
+                let averaged_grad: Vec<f32> =
+                    grad.iter().map(|&g| g / self.world_size as f32).collect();
                 param.grad = Some(averaged_grad);
             }
         }
     }
 
-    pub async fn train_step(&self, batch: (Tensor, Tensor)) -> f32 {
+    pub async fn train_step(&self, batch: (Tensor, Tensor)) -> Result<f32, BellandeError> {
         let (batch_x, batch_y) = batch;
-        let loss;
-
+        let loss_tensor;
         {
-            let mut model = self.model.lock().await;
-            let mut optimizer = self.optimizer.lock().await;
-
+            let mut model = self.model.lock().expect("Failed to lock model mutex");
+            let mut optimizer = self
+                .optimizer
+                .lock()
+                .expect("Failed to lock optimizer mutex");
             optimizer.zero_grad();
-
-            // Forward pass
-            let prediction = model.forward(&batch_x);
-            loss = self.loss_fn.forward(&prediction, &batch_y);
-
-            // Backward pass
-            let grad = self.loss_fn.backward(&prediction, &batch_y);
-            model.backward(&grad);
+            let prediction = model.forward(&batch_x)?;
+            loss_tensor = self.loss_fn.forward(&prediction, &batch_y)?;
+            let grad = self.loss_fn.backward(&prediction, &batch_y)?;
+            model.backward(&grad)?;
         }
 
-        // Average gradients across all processes
         self.average_gradients().await;
-
-        // Update parameters
-        let mut optimizer = self.optimizer.lock().await;
+        let mut optimizer = self
+            .optimizer
+            .lock()
+            .expect("Failed to lock optimizer mutex");
         optimizer.step();
 
-        loss
+        let loss_value = loss_tensor.data()[0];
+        Ok(loss_value)
     }
 }

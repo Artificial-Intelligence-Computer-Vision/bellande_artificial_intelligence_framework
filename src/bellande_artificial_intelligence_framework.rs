@@ -19,6 +19,7 @@ use std::path::Path;
 
 pub mod core;
 pub mod data;
+pub mod distributed;
 pub mod layer;
 pub mod loss;
 pub mod metrics;
