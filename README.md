@@ -87,7 +87,7 @@ For organizational licensing information, see:
 - [BitBucket Organization Licensing](https://bitbucket.org/bellande-artificial-intelligence-computer-vision/LICENSING)
 
 ## Copyright
-Copyright (c) 2024 Bellande Artificial Intelligence Computer Vision Research Institute (BAICVRI)
+Copyright (c) 2024 Bellande Artificial Intelligence Computer Vision Research Innovation Center (BAICVRI)
 
 For copyright details, see:
 - [Bellande Git NOTICE](https://git.bellande-technologies.com/BAICVRI/bellande_artificial_intelligence_framework/blob/main/NOTICE)

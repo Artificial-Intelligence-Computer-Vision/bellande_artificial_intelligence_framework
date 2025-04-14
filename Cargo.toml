@@ -9,7 +9,7 @@ Provides tools and utilities for machine learning model development, training, a
 """
 
 # Repository Information
-repository = "https://github.com/BAICVRI/bellande_artificial_intelligence_framework"
+repository = "https://github.com/Artificial-Intelligence-Computer-Vision/bellande_artificial_intelligence_framework"
 companypage = "https://git.bellande-technologies.com/BAICVRI/bellande_artificial_intelligence_framework"
 homepage = "https://github.com/Artificial-Intelligence-Computer-Vision/bellande_artificial_intelligence_framework"
 
