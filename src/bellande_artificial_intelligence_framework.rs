@@ -28,18 +28,20 @@ pub mod optim;
 pub mod training;
 pub mod utilities;
 
+pub use crate::utilities::config::Configuration;
+
 const VERSION: &str = env!("CARGO_PKG_VERSION");
 const FRAMEWORK_NAME: &str = "Bellande AI Framework";
 
 pub struct Framework {
-    config: utilities::config::Configuration,
+    config: Configuration,
     device: Device,
     initialized: bool,
 }
 
 impl Framework {
     pub fn new() -> Result<Self, Box<dyn Error>> {
-        let default_config = utilities::config::Configuration::default();
+        let default_config = Configuration::default();
         Ok(Framework {
             config: default_config,
             device: Device::CPU,
@@ -48,7 +50,7 @@ impl Framework {
     }
 
     pub fn with_config<P: AsRef<Path>>(config_path: P) -> Result<Self, Box<dyn Error>> {
-        let config = utilities::config::Configuration::from_file(config_path)?;
+        let config = Configuration::from_file(config_path)?;
         let device = Device::from(&config.system.device)?;
 
         Ok(Framework {
